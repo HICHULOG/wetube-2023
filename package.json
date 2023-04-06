@@ -7,7 +7,7 @@
     "url": "git+https://github.com/HICHULOG/wetube-2023.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "author": "HICHULOG <itchu92@gmail.com>",
   "license": "ISC",
