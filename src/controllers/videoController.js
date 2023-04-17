@@ -3,7 +3,17 @@ const fakeUser = {
     loggedIn: true
 }
 export const trending = (req, res) => {
-    const videos = [];
+    const videos = [
+        {
+            title: "Hello",
+        },
+        {
+            title: "Video #2",
+        },
+        {
+            title: "What's up",
+        },
+    ];
     return res.render("home", {pageTitle: "Home", fakeUser, videos});
 } 
 export const see = (req, res) => res.render("watch", {pageTitle: "Watch Video"});
