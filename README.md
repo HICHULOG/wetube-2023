@@ -10,17 +10,22 @@
 /search -> Search
 
 ### 🙋🏻‍♀️ User Routers
-/users/edit -> Edit user
+/users/:id -> See user
 <br>
-/users/delete -> Delete user
+/users/logout -> Log Out
+<br>
+/users/edit -> Edit My Profile
+<br>
+/users/delete -> Delete My Profile
+<br>
 
 ### 📼 Video Routers
-/videos/watch -> Watch Video
+/videos/:id -> See Video
 <br>
-/videos/edit -> Edit Video
+/videos/:id/edit -> Edit Video
 <br>
-/videos/delete -> Delete Video
+/videos/:id/delete -> Delete Video
 <br>
-/videos/comments -> Comment on a Video
+/videos/upload -> Upload Video
 <br>
-/videos/comments/delete -> Delete a comment of a Video
+
