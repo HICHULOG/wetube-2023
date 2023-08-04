@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/HICHULOG/wetube-2023#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
