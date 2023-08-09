@@ -4,7 +4,7 @@ let videos = [
         rating: 5,
         comments: 2,
         createdAt: "2 minutes ago",
-        views: 59,
+        views: 1,
         id: 1,
     },
     {
@@ -29,11 +29,11 @@ let videos = [
 export const trending = (req, res) => {
     res.render("home", { pageTitle: "Home", videos });
 };
-export const see = (req, res) => {
+export const watch = (req, res) => {
     // const id = req.params.id;은 아래 표현식과 같은 표현이다.
     const { id } = req.params;
     const video = videos[id-1];
-    res.render("watch", { pageTitle: `Watching ${video.title}` });
+    res.render("watch", { pageTitle: `Watching ${video.title}`, video });
 }
 export const edit = (req, res) => res.render("edit", { pageTitle: "Edit" });
 export const search = (req, res) => res.send("Search Video");
