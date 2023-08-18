@@ -4,6 +4,7 @@ import session from "express-session";
 import rootRouter from "./routers/rootRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
+import { localsMiddleware } from "./middlewares";
 
 const app = express();
 const logger = morgan("dev");
@@ -20,13 +21,9 @@ app.use(
     })
 );
 
-app.use((req,res,next)=>{
-    req.sessionStore.all((error, sessions) => {
-        console.log(sessions);
-    })
-    next();
-});
-
+// session middleware다음에 있어야함!!
+// 그래야 localsMiddleware가 session object에 접근할 수 있음.
+app.use(localsMiddleware);
 app.use("/", rootRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
