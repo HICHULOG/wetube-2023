@@ -17,8 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
     session({
         secret: "Hello!",
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
+        // url을 string채로 두면 누군가가 DB URL을 알고 연결할수 있기 때문에 위험하다
         store: MongoStore.create({mongoUrl:"mongodb://127.0.0.1:27017/wetube"}),
     })
 );
