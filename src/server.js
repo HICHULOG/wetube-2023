@@ -16,11 +16,16 @@ app.use(logger);
 app.use(express.urlencoded({ extended: true }));
 app.use(
     session({
-        secret: "Hello!",
+        secret: process.env.COOKIE_SECRET,
         resave: false,
         saveUninitialized: false,
-        // url을 string채로 두면 누군가가 DB URL을 알고 연결할수 있기 때문에 위험하다
-        store: MongoStore.create({mongoUrl:"mongodb://127.0.0.1:27017/wetube"}),
+        // 세션만료기간 설정, 로그인을 얼마나 유지할지 결정
+        /* 
+        cookie: {
+            maxAge: 20000,
+        },
+        */
+        store: MongoStore.create({mongoUrl: process.env.DB_URL }),
     })
 );
 
