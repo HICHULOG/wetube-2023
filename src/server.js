@@ -19,12 +19,6 @@ app.use(
         secret: process.env.COOKIE_SECRET,
         resave: false,
         saveUninitialized: false,
-        // 세션만료기간 설정, 로그인을 얼마나 유지할지 결정
-        /* 
-        cookie: {
-            maxAge: 20000,
-        },
-        */
         store: MongoStore.create({mongoUrl: process.env.DB_URL }),
     })
 );
